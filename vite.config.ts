@@ -1,5 +1,8 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import tailwindcss from 'tailwindcss';
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,7 +14,10 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    tailwindcss('./tailwind.config.js'),
+  ],
   resolve: {
     alias: {
       stream: "stream-browserify",
